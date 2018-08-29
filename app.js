@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   giphy.search(req.query.term, function (err, response) {
-    res.render('home', {gifs: res.data})
+    res.render('home', {gifs: response.data})
   });
 });
 
